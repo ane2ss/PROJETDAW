@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lightning Education</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/PROJETDAW/images/favicon.png">
+</head>
+<body>
+  <!-- Top navbar starts -->
+<div class="navbar">
+  <div class="container">
+    <img src="images/logo.png" class="logo" alt="Logo">
+    <h1 class="logo-text">Lightning Education</h1> <!-- Add this line -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="formation1.html">Computer Science</a></li>
+        <li><a href="formation2.html">Languages</a></li>
+        <li><a href="formation3.html">Management</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- Top navbar ends -->
+
+  <!-- Vertical navbar starts -->
+  <div class="vertical-nav">
+    <ul>
+      <li>
+        <img src="images/user.png" class="icon" alt="User Icon">
+        <span>Name: Aness / Adel</span>
+      </li>
+      <li>
+        <img src="images/user.png" class="icon" alt="User Icon">
+        <span>LastName: Kennouche / Kebaily</span>
+      </li>
+      <li>
+        <img src="images/people.png" class="icon" alt="Group Icon">
+        <span>Group: 10</span>
+      </li>
+      <li>
+        <img src="images/user-interface.png" class="icon" alt="Section Icon">
+        <span>Section:Informatique</span>
+      </li>
+      <li>
+        <img src="images/email.png" class="icon" alt="Email Icon">
+        <span>Email: kennouche.<br>aness@gmail.com / chemseddine.keb@gmail.com</span>
+      </li>
+    </ul>
+  </div>
+  <!-- Vertical navbar ends -->
+
+  <!-- Container starts -->
+  <div class="container">
+    <!-- Main Section Start -->
+    <div class="main-section">
+      <h3>Learn , With no limits -<br> Lightning Education. </h3>
+      <p>Lightning Education offers quality content <br> and  a unique approach
+        to help you <br> master practical skills effortlessly.</p>
+        <a href="#art1" class="main-button">Discover our courses</a>
+    </div>
+    <!-- Main Section End -->
+
+    <!-- Articles and Slider Start -->
+    <div class="content" id="art1">
+      <div class="articles">
+        <div class="art-left">
+          <div class="art1">
+            <h2>Computer Science</h2>
+            <p>Our school helps develop high tech programmers in different aspects make sure you dont miss out.</p>
+            <a href="formation1.html" class="read-more">Read More</a>
+          </div>
+          <div class="art2">
+            <h2>Languages</h2>
+            <p>Learning languages was always our playground, be fluent is our motto sign up now.</p>
+            <a href="formation2.html" class="read-more">Read More</a>
+          </div>
+          <div class="art3">
+            <h2>Management</h2>
+            <p>Hello? Did anyone say management? Luckily you came into the right place make sure to check out our program.</p>
+            <a href="formation3.html" class="read-more">Read More</a>
+          </div>
+        </div>
+        <!-- CSS SLIDER START -->
+        <div class="art-right">
+          <div class="slide-container">
+            <div class="slide active">
+              <img src="images/cyberdiscount.jpg" alt="Cyber Discount">
+            </div>
+            <div class="slide">
+              <img src="images/Discount.jpg" alt="Spanish Discount">
+            </div>
+            <div class="slide">
+              <img src="images/marketingdiscount.jpg" alt="Marketing Discount">
+            </div>
+            <div class="buttonholder">
+              <span class="button active" data-slide="0"></span>
+              <span class="button" data-slide="1"></span>
+              <span class="button" data-slide="2"></span>
+            </div>
+          </div>
+        </div>
+        <!-- CSS SLIDER End -->
+      </div>
+      <!-- Articles and Slider End -->
+
+      <!-- Comments Section Start -->
+      <div class="comments-section">
+        <h2>Leave a Comment:</h2>
+        <form id="comment-form">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="comment">Comment:</label>
+            <textarea id="comment" name="comment" rows="4" required></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+        <div id="comments-list">
+          <!-- Existing comments will be dynamically inserted here -->
+        </div>
+      </div>
+      <!-- Comments Section End -->
+    </div>
+    <!-- Content End -->
+  </div>
+  <!-- Container End -->
+  <script src="script.js"></script>
+</body>
+</html>

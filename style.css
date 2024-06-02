@@ -1,0 +1,386 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff;
+  scroll-behavior: smooth;
+}
+body {
+  background-image: url(images/Homebackgroundoff.jpg);
+  background-size: 100% auto;
+  background-position: top;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #333; /* Example text color */
+  /* Adjust to start below the navbar */
+  padding-top: 70px; /* Same as vertical-nav height */
+}
+
+.container {
+  width: 100%;
+  padding: 0 10%;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 90px;
+  cursor: pointer;
+  
+}
+.logo-text {
+  margin-left: 20 px;
+  margin-right: auto;
+  font-size: 20px;
+  color: #252c4b; /* Adjust text color */
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 25px;
+}
+
+nav ul li a {
+  display: inline-block;
+  vertical-align: middle;
+  outline: none;
+  background-image: linear-gradient(90deg, var(--thm-primary) 0%, var(--thm-base) 100%);
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #252c4b;
+  padding: 7px;
+  position: relative;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  text-decoration: none;
+  
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+  background-color: #252c4b;
+}
+
+.vertical-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 155px; /* Reduce width */
+  height: 100%;
+  background-color: #EEEEEE;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 70px;
+}
+
+.vertical-nav ul {
+  list-style: none;
+  padding: 20px;
+  width: 100%;
+}
+
+.vertical-nav ul li {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  color: #080707;
+}
+
+.vertical-nav ul li .icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.vertical-nav ul li span {
+  font-size: 12px; /* Adjust font size */
+  max-width: calc(100% - 34px); /* Adjust max-width based on icon size and margin */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.main-section {
+  margin-top: 100px; /* Adjust as necessary */
+  margin-left: 100px; /* Adjust based on vertical-nav width */
+}
+
+
+.main-section h3 {
+  font-family: 'Quicksand', sans-serif; /* Ensure font family is correctly specified */
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color : #252c4b;
+}
+
+
+.main-section p {
+  
+  font-size: 18px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.main-button {
+  display: inline-block;
+  vertical-align: middle;
+  border: 2px solid #252c4b; /* Blue border */
+  outline: none;
+  background-image: linear-gradient(90deg, var(--thm-primary) 0%, var(--thm-base) 100%);
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #252c4b;
+  padding: 13px 50px;
+  position: relative;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  margin-top: 40px;
+}
+.main-button:hover {
+  background-color: #252c4b;
+  border: 2px solid grey;
+  color: white;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px; /* Adjust based on vertical-nav width */
+  padding: 20px;
+  margin-top: 400px; /* Add this line to account for fixed navbar height */
+  
+}
+.articles {
+  display: flex;
+  flex-basis: 50%;
+}
+
+.art-left {
+  flex-basis: 50%;
+}
+
+.art-right {
+  flex-basis: 50%;
+  position: relative;
+}
+
+.slide-container {
+  position: sticky;
+  top: 100px; /* Keep the slider fixed within the viewport */
+  width: 400px; /* Adjust slider container width */
+  height: 400px; /* Adjust slider container height */
+  overflow: hidden;
+  margin-left: 20%; /* Adjust the margin-left to position the slider */
+  margin-bottom: 60px;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px; /* Add border-radius to the image */
+  transform: scale(0.9); /* Scale down the image by 90% (dezoom) */
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.buttonholder {
+  position: absolute;
+  top: 11px; /* Fix buttons to the top of the slider */
+  left: 0; /* Align buttons to the left of the slider */
+  right: 0; /* Align buttons to the right of the slider */
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.button {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button.active {
+  background-color: white;
+}
+
+/* Optional: Hover effect for buttons */
+.button:hover {
+  background-color: #555;
+}
+
+/* Article styles */
+.art1, .art2, .art3 {
+  margin-bottom: 150px; /* Increase the space between articles */
+  position: relative; /* Ensure relative positioning for overlay */
+  overflow: hidden; /* Hide overflow for overlay */
+}
+
+.art1 {
+  background-image: url(/PROJETDAW/images/csbackground.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px; /* Add border-radius to the article */
+  padding: 40px;
+  padding-right: 40px; /* Add padding for inner content */
+  color: white;;
+}
+.art2 {
+  background-image: url(images/languebackground.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px; /* Add border-radius to the article */
+  padding: 40px;
+  padding-right: 40px; /* Add padding for inner content */
+  color: white;
+
+}
+.art3 {
+  background-image: url(images/marketingbackground.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px; /* Add border-radius to the article */
+  padding: 40px;
+  padding-right: 40px; /* Add padding for inner content */
+  color: rgb(230, 227, 227);;
+}
+
+
+
+.art1 h2, .art2 h2, .art3 h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  
+}
+
+.read-more {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 35px; /* Adjust top margin */
+}
+
+.read-more:hover {
+  background-color: #555;
+}
+
+/* CSS for Comment Section */
+.comments-section {
+  margin-top: 50px;
+}
+
+#comment-form {
+  margin-bottom: 20px;
+}
+
+#comment-form .form-group {
+  margin-bottom: 15px;
+}
+
+#comment-form label {
+  display: block;
+  font-weight: bold;
+}
+
+#comment-form input[type="email"],
+#comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#comment-form textarea {
+  resize: vertical;
+}
+
+#comment-form button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#comment-form button[type="submit"]:hover {
+  background-color: #555;
+}
+
+#comments-list .comment {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#comments-list .comment p {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+#comments-list .comment .meta {
+  font-size: 14px;
+  color: #777;
+}
+/* CSS Ends Comment Section */
